@@ -7,6 +7,8 @@ public class Main {
         String sinopse;
         int anoDeLancamento;
         int quantidadeDeNotas;
+        int classificacaoDoFilme;
+        int numeroDivisorDaClassificacao;
         boolean incluidoNoPlano;
         double notaDoFilme1;
         double notaDoFilme2;
@@ -22,11 +24,13 @@ public class Main {
                 """.formatted(titulo);
         anoDeLancamento = 2000;
         quantidadeDeNotas = 3;
+        numeroDivisorDaClassificacao = 2;
         incluidoNoPlano = true;
         notaDoFilme1 = 7.2;
         notaDoFilme2 = 6.3;
         notaDoFilme3 = 8.0;
         mediaDasNotas = (notaDoFilme1 + notaDoFilme2 + notaDoFilme3) / quantidadeDeNotas;
+        classificacaoDoFilme = (int) mediaDasNotas / numeroDivisorDaClassificacao;
 
         System.out.println("Bem-vindo ao Lumière");
         System.out.println("Filme: Gladiador");
@@ -34,5 +38,6 @@ public class Main {
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Disponível: " + incluidoNoPlano);
         System.out.printf("Nota: %.1f", mediaDasNotas);
+        System.out.println("\nClassificação: " + classificacaoDoFilme);
     }
 }
