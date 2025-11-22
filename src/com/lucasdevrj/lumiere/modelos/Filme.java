@@ -1,15 +1,44 @@
 package com.lucasdevrj.lumiere.modelos;
 
+import java.time.LocalDate;
+
 public class Filme {
 
-    public String nome;
-    public int anoDeLancamento;
-    public boolean incluidoNoPlano;
+    private String nome;
+    private int anoDeLancamento;
+    private boolean incluidoNoPlano;
     private double avaliacao;
     private double somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int classificacao;
-    public int duracaoEmMinutos;
+    private int duracaoEmMinutos;
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setAnoDeLancamento(int anoDeLancamento) {
+        int anoDoPrimeiroFilmeLancado = 1895;
+        LocalDate dataAtual = LocalDate.now();
+        int anoAtual = dataAtual.getYear();
+        if (anoDeLancamento >= anoDoPrimeiroFilmeLancado && anoDeLancamento <= anoAtual) {
+            this.anoDeLancamento = anoDeLancamento;
+        } else {
+            System.out.println("Digite um ano de lançamento válido!");
+        }
+    }
+
+    public void setIncluidoNoPlano(boolean incluidoNoPlano) {
+        this.incluidoNoPlano = incluidoNoPlano;
+    }
+
+    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
+        this.duracaoEmMinutos = duracaoEmMinutos;
+    }
 
     public int getClassificacao() {
         classificacao = (int) somaDasAvaliacoes / totalDeAvaliacoes;
