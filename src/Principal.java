@@ -1,3 +1,5 @@
+import com.lucasdevrj.lumiere.modelos.Filme;
+
 public class Principal {
     public static void main(String[] args) {
 
@@ -13,6 +15,7 @@ public class Principal {
 
         filme1.exibeFichaTecnica();
 
+        System.out.println(String.format("Classificação do filme \"%s\": %d de 10", filme1.nome, filme1.getClassificacao()));
         System.out.println(String.format("Total de avaliações do filme \"%s\": %d", filme1.nome, filme1.getTotalDeAvaliacoes()));
     }
 }

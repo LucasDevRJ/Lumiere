@@ -33,7 +33,7 @@ public class Main {
         classificacaoDoFilme = (int) mediaDasNotas / numeroDivisorDaClassificacao;
 
         System.out.println("Bem-vindo ao Lumière");
-        System.out.println("Filme: Gladiador");
+        System.out.println("com.lucasdevrj.lumiere.filme.Filme: Gladiador");
         System.out.println(sinopse);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Disponível: " + incluidoNoPlano);
