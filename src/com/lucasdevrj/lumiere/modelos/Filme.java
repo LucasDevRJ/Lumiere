@@ -36,6 +36,10 @@ public class Filme {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
+    public boolean getIncluidoNoPlano() {
+        return incluidoNoPlano;
+    }
+
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
@@ -51,7 +55,11 @@ public class Filme {
 
     public void exibeFichaTecnica() {
         System.out.println("Nome do Filme: " + nome);
+        System.out.println("Duração: " + duracaoEmMinutos + " minutos");
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
+        System.out.println("Classificação: " + getClassificacao() + " de 10");
+        String incluidoNoPlano = getIncluidoNoPlano() == true ? "Incluído" : "Não Incluído";
+        System.out.println("Incluído: " + incluidoNoPlano + " no seu Plano");
     }
 
     public void avaliaFilme(double nota) {

@@ -1,7 +1,14 @@
 import com.lucasdevrj.lumiere.modelos.Filme;
+import com.lucasdevrj.lumiere.modelos.Serie;
 
 public class Principal {
     public static void main(String[] args) {
+
+        Serie serie = new Serie();
+        serie.setQuantidadeDeTemporadas(4);
+        serie.setQuantidadeDeEpisodiosPorTemporada(19);
+        serie.setTotalDeMinutosPorEpisodio(50);
+        serie.exibeFichaTecnica();
 
         Filme filme1 = new Filme();
         filme1.setNome("Sonic - O Filme");
