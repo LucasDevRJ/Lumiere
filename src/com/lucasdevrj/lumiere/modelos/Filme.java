@@ -7,10 +7,10 @@ public class Filme {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
-    private double avaliacao;
-    private double somaDasAvaliacoes;
+    private int avaliacao;
+    private int somaDasAvaliacoes;
     private int totalDeAvaliacoes;
-    private int classificacao;
+    private int nota;
     private int duracaoEmMinutos;
 
     public void setNome(String nome) {
@@ -36,17 +36,13 @@ public class Filme {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public boolean getIncluidoNoPlano() {
-        return incluidoNoPlano;
-    }
-
     public void setDuracaoEmMinutos(int duracaoEmMinutos) {
         this.duracaoEmMinutos = duracaoEmMinutos;
     }
 
-    public int getClassificacao() {
-        classificacao = (int) somaDasAvaliacoes / totalDeAvaliacoes;
-        return classificacao;
+    public int getNota() {
+        nota = somaDasAvaliacoes / totalDeAvaliacoes;
+        return nota;
     }
 
     public int getTotalDeAvaliacoes() {
@@ -54,18 +50,22 @@ public class Filme {
     }
 
     public void exibeFichaTecnica() {
-        System.out.println("Nome do Filme: " + nome);
-        System.out.println("Duração: " + duracaoEmMinutos + " minutos");
-        System.out.println("Ano de Lançamento: " + anoDeLancamento);
-        System.out.println("Classificação: " + getClassificacao() + " de 10");
-        String incluidoNoPlano = getIncluidoNoPlano() == true ? "Incluído" : "Não Incluído";
-        System.out.println("Incluído: " + incluidoNoPlano + " no seu Plano");
+        System.out.println("--------------------|Informações sobre o Filme|--------------------");
+        System.out.println("Nome: " + nome);
+        System.out.printf("Nota: %d de 10\n", getNota());
+        System.out.printf("Duração: %d minutos\n", duracaoEmMinutos);
+        System.out.println("Ano da lançamento: " + anoDeLancamento);
+        System.out.println("-------------------------------------------------------------------");
     }
 
-    public void avaliaFilme(double nota) {
-        avaliacao = nota;
-        somaDasAvaliacoes += avaliacao;
-        totalDeAvaliacoes++;
+    public void avaliaFilme(int nota) {
+        if (nota > 0 && nota <= 10) {
+            avaliacao = nota;
+            somaDasAvaliacoes += avaliacao;
+            totalDeAvaliacoes++;
+        } else {
+            System.out.println("Nota inválida!\nDigite uma nota entre 0 e 10.");
+        }
     }
 
 }

@@ -5,8 +5,8 @@ public class Serie {
     private String nome;
     private int anoDeLancamento;
     private boolean incluidoNoPlano;
-    private double avaliacao;
-    private double somaDasAvaliacoes;
+    private int avaliacao;
+    private int somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private int nota;
     private int duracaoTotalEmMinutos;
@@ -45,19 +45,29 @@ public class Serie {
         return duracaoTotalEmMinutosRestantes;
     }
 
+    public int getNota() {
+        nota = somaDasAvaliacoes / totalDeAvaliacoes;
+        return nota;
+    }
+
     public void exibeFichaTecnica() {
         System.out.println("--------------------|Informações sobre a Série|--------------------");
         System.out.println("Nome: " + nome);
-        System.out.println("Nota: " + nota + " de 10");
+        System.out.println("Nota: " + getNota() + " de 10");
         System.out.println("Quantidade de temporadas: " + quantidadeDeTemporadas);
         System.out.printf("Duração: %d horas e %d minutos\n", getDuracaoTotalEmHoras(), getDuracaoTotalEmMinutosRestantes());
         System.out.println("Ano de Lançamento: " + anoDeLancamento);
+        System.out.println("-------------------------------------------------------------------");
     }
 
-    public void avaliaSerie(double nota) {
-        avaliacao = nota;
-        somaDasAvaliacoes += avaliacao;
-        totalDeAvaliacoes++;
+    public void avaliaSerie(int nota) {
+        if (nota > 0 && nota <= 10) {
+            avaliacao = nota;
+            somaDasAvaliacoes += avaliacao;
+            totalDeAvaliacoes++;
+        } else {
+            System.out.println("Nota inválida!\nDigite uma nota entre 0 e 10.");
+        }
     }
 }
 
