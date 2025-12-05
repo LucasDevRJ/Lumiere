@@ -1,7 +1,5 @@
 package com.lucasdevrj.lumiere.modelos;
 
-import java.util.List;
-
 public class Titulo {
 
     private String nome;

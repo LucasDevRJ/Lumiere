@@ -1,4 +1,5 @@
 import com.lucasdevrj.lumiere.modelos.Filme;
+import com.lucasdevrj.lumiere.modelos.Serie;
 
 import java.util.List;
 
@@ -30,5 +31,10 @@ public class Principal {
         filme1.exibirFichaTecnica();
 
         filme1.exibirTitulo();
+
+        Serie serie1 = new Serie();
+        serie1.setNome("The Mandalorian");
+        serie1.setGenero("Ficção científica, Aventura e Ação");
+        serie1.setCriador("Jon Favreau");
     }
 }
