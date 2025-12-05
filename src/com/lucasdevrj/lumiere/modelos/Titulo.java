@@ -12,7 +12,7 @@ public class Titulo {
     private int avaliacao;
     private String diretor;
     private String elenco;
-    private String classificacaoIndicativa;
+    private int classificacaoIndicativa;
     private int somaDasAvaliacoes;
     private int totalDeAvaliacoes;
 
@@ -44,13 +44,41 @@ public class Titulo {
         this.incluidoNoPlano = incluidoNoPlano;
     }
 
-    public void setClassificacaoIndicativa(String classificacaoIndicativa) {
-        this.classificacaoIndicativa = classificacaoIndicativa;
+    public void setClassificacaoIndicativa(int classificacaoIndicativa) {
+        if (classificacaoIndicativa == 0 || classificacaoIndicativa == 10 || classificacaoIndicativa == 12
+        || classificacaoIndicativa == 14 || classificacaoIndicativa == 16 || classificacaoIndicativa == 18) {
+            this.classificacaoIndicativa = classificacaoIndicativa;
+        }
     }
 
     public int getAvaliacao() {
-        avaliacao = somaDasAvaliacoes / totalDeAvaliacoes;
-        return avaliacao;
+        if (somaDasAvaliacoes > 0 && totalDeAvaliacoes > 0) {
+            return avaliacao = somaDasAvaliacoes / totalDeAvaliacoes;
+        }
+        return 0;
+    }
+
+    public void exibirTitulo() {
+        System.out.println("--------------------|Resumo sobre o Título|--------------------");
+        System.out.println("Nome: " + nome);
+        System.out.printf("Avaliação: %d de 10\n", getAvaliacao());
+        System.out.println("Ano de lançamento: " + anoDeLancamento);
+        System.out.println("Gênero: " + genero);
+        System.out.println("---------------------------------------------------------------");
+    }
+
+    public String estaIncluidoNoPlano() {
+        if (incluidoNoPlano) {
+            return "Sim";
+        }
+        return "Não";
+    }
+
+    public String indicadoSomenteParaMaioresDeIdade() {
+        if (classificacaoIndicativa == 18) {
+            return "Título recomendado somente para maiores de 18 anos.";
+        }
+        return "";
     }
 
     public void exibirFichaTecnica() {
@@ -59,12 +87,12 @@ public class Titulo {
         System.out.println("Gênero: " + genero);
         System.out.println("Ano de lançamento: " + anoDeLancamento);
         System.out.println("Sinopse: " + sinopse);
-        String incluidoNoPlano = this.incluidoNoPlano == true ? "Sim" : "Não";
-        System.out.println("Incluído no plano: " + incluidoNoPlano);
+        System.out.println("Incluído no plano: " + estaIncluidoNoPlano());
         System.out.printf("Avaliação: %d de 10\n", getAvaliacao());
         System.out.println("Diretor: " + diretor);
         System.out.println("Elenco: " + elenco);
-        System.out.println("Classificação Indicativa: " + classificacaoIndicativa);
+        System.out.printf("Classificação Indicativa: %d anos\n", classificacaoIndicativa);
+        System.out.print(indicadoSomenteParaMaioresDeIdade());
     }
 
     public void avaliarTitulo(int avaliacao) {
@@ -76,5 +104,12 @@ public class Titulo {
         } else {
             System.out.println("Avaliação inválida! Digite uma nota entre 0 e 10.");
         }
+    }
+
+    public void zerarAvaliacoes() {
+        avaliacao = 0;
+        somaDasAvaliacoes = 0;
+        totalDeAvaliacoes = 0;
+        System.out.println("Avaliações foram zeradas.");
     }
 }

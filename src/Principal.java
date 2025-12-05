@@ -15,7 +15,7 @@ public class Principal {
                 "escondido. Após ser descoberto por um policial, eles precisam se unir para impedir que o cientista " +
                 "Dr. Robotnik capture Sonic e use seus poderes para dominar o mundo.");
         filme1.setIncluidoNoPlano(true);
-        filme1.setClassificacaoIndicativa("10 anos");
+        filme1.setClassificacaoIndicativa(10);
         filme1.setTemCenaPosCredito(true);
         filme1.setStudio("Paramount Pictures");
         filme1.setTrilhaSonora("Tom Holkenborg (Junkie XL)");
@@ -24,7 +24,11 @@ public class Principal {
         filme1.avaliarTitulo(6);
         filme1.avaliarTitulo(9);
         filme1.avaliarTitulo(2);
-
         filme1.exibirFichaTecnica();
+        filme1.zerarAvaliacoes();
+        filme1.avaliarTitulo(1);
+        filme1.exibirFichaTecnica();
+
+        filme1.exibirTitulo();
     }
 }
