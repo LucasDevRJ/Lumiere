@@ -129,6 +129,7 @@ public class Titulo {
     public void encerrar() {
         if (estaAssistindo == true) {
             System.out.printf("Você parou de assistir o título '%s'.\n", nome);
+            estaAssistindo = false;
         } else {
             System.out.printf("Tem que esta assistindo o título '%s' para encerra-lo.\n", nome);
         }
