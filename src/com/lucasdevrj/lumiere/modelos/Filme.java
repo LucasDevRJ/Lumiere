@@ -29,6 +29,8 @@ public class Filme extends Titulo {
         System.out.printf("Duração: %d minutos\n", duracaoEmMinutos);
         String temCenaPosCreditos = temCenaPosCredito == true ? "Sim" : "Não";
         System.out.println("Cena pós créditos: " + temCenaPosCreditos);
+        System.out.println("Studio: " + studio);
+        System.out.println("Trilha sonora: " + trilhaSonora);
         System.out.println("---------------------------------------------------------------------");
     }
 }

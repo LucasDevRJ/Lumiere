@@ -27,6 +27,9 @@ public class Principal {
         filme1.zerarAvaliacoes();
         filme1.avaliarTitulo(1);
         filme1.exibirFichaTecnica();
+        filme1.assistir();
+        filme1.pausar();
+        filme1.encerrar();
 
         filme1.exibirTitulo();
 

@@ -13,6 +13,7 @@ public class Titulo {
     private int classificacaoIndicativa;
     private int somaDasAvaliacoes;
     private int totalDeAvaliacoes;
+    private boolean estaAssistindo;
 
     public void setNome(String nome) {
         this.nome = nome;
@@ -99,7 +100,7 @@ public class Titulo {
             this.avaliacao = avaliacao;
             somaDasAvaliacoes += this.avaliacao;
             totalDeAvaliacoes++;
-            System.out.println("O Título foi avaliado com sucesso!");
+            System.out.println("O título '" + nome + "' foi avaliado com sucesso!");
         } else {
             System.out.println("Avaliação inválida! Digite uma nota entre 0 e 10.");
         }
@@ -110,5 +111,26 @@ public class Titulo {
         somaDasAvaliacoes = 0;
         totalDeAvaliacoes = 0;
         System.out.println("Avaliações foram zeradas.");
+    }
+
+    public void assistir() {
+        estaAssistindo = true;
+        System.out.printf("Você esta assistindo o título '%s'.\n", nome);
+    }
+
+    public void pausar() {
+        if (estaAssistindo == true) {
+            System.out.printf("Você pausou o título '%s'.\n", nome);
+        } else {
+            System.out.printf("Tem que começar a assistir o título '%s' para pausa-lo.\n", nome);
+        }
+    }
+
+    public void encerrar() {
+        if (estaAssistindo == true) {
+            System.out.printf("Você parou de assistir o título '%s'.\n", nome);
+        } else {
+            System.out.printf("Tem que esta assistindo o título '%s' para encerra-lo.\n", nome);
+        }
     }
 }
