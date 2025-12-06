@@ -1,8 +1,6 @@
 import com.lucasdevrj.lumiere.modelos.Filme;
 import com.lucasdevrj.lumiere.modelos.Serie;
 
-import java.util.List;
-
 public class Principal {
     public static void main(String[] args) {
         Filme filme1 = new Filme();
@@ -35,6 +33,22 @@ public class Principal {
         Serie serie1 = new Serie();
         serie1.setNome("The Mandalorian");
         serie1.setGenero("Ficção científica, Aventura e Ação");
+        serie1.setAnoDeLancamento(2019);
         serie1.setCriador("Jon Favreau");
+        serie1.setQuantidadeDeTemporadas(3);
+        serie1.setAindaEstaEmProducao(true);
+        serie1.setQuantidadeDeEpisodios(24);
+        serie1.setQuantidadeDeMinutosPorEpisodio(55);
+        serie1.setElenco("Pedro Pascal");
+        serie1.setSinopse("A série se passa no universo de “Star Wars”, após a queda do Império; " +
+                "acompanha um caçador de recompensas solitário que aceita missões perigosas — " +
+                "e ao longo da história acaba formando vínculos, enfrentando dilemas morais " +
+                "e desafios numa galáxia cheia de perigos.");
+        serie1.setClassificacaoIndicativa(12);
+        serie1.avaliarTitulo(10);
+        serie1.avaliarTitulo(7);
+        serie1.avaliarTitulo(7);
+        serie1.exibirTitulo();
+        serie1.exibirFichaTecnica();
     }
 }

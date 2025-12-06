@@ -89,7 +89,8 @@ public class Titulo {
         System.out.printf("Avaliação: %d de 10\n", getAvaliacao());
         System.out.println("Diretor: " + diretor);
         System.out.println("Elenco: " + elenco);
-        System.out.printf("Classificação Indicativa: %d anos\n", classificacaoIndicativa);
+        String indicacao = classificacaoIndicativa == 0 ? "Livre" : classificacaoIndicativa + " anos";
+        System.out.println("Classificação Indicativa: " + indicacao);
         System.out.print(indicadoSomenteParaMaioresDeIdade());
     }
 
