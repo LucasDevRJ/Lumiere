@@ -38,6 +38,7 @@ public class Principal {
         serie1.setGenero("Ficção científica, Aventura e Ação");
         serie1.setAnoDeLancamento(2019);
         serie1.setCriador("Jon Favreau");
+        serie1.setDiretor("Jon Favreau, Dave Filoni, Rick Famuyiwa, Bryce Dallas Howard");
         serie1.setQuantidadeDeTemporadas(3);
         serie1.setAindaEstaEmProducao(true);
         serie1.setQuantidadeDeEpisodios(24);
