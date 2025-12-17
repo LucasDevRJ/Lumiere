@@ -133,26 +133,4 @@ public class Titulo {
         totalDeAvaliacoes = 0;
         System.out.println("Avaliações foram zeradas.");
     }
-
-    public void assistir() {
-        estaAssistindo = true;
-        System.out.printf("Você esta assistindo o título '%s'.\n", nome);
-    }
-
-    public void pausar() {
-        if (estaAssistindo == true) {
-            System.out.printf("Você pausou o título '%s'.\n", nome);
-        } else {
-            System.out.printf("Tem que começar a assistir o título '%s' para pausa-lo.\n", nome);
-        }
-    }
-
-    public void encerrar() {
-        if (estaAssistindo == true) {
-            System.out.printf("Você parou de assistir o título '%s'.\n", nome);
-            estaAssistindo = false;
-        } else {
-            System.out.printf("Tem que esta assistindo o título '%s' para encerra-lo.\n", nome);
-        }
-    }
 }
