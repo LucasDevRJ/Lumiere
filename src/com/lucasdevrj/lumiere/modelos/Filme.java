@@ -2,14 +2,9 @@ package com.lucasdevrj.lumiere.modelos;
 
 public class Filme extends Titulo {
 
-    private int duracaoEmMinutos;
     private boolean temCenaPosCredito;
     private String studio;
     private String trilhaSonora;
-
-    public void setDuracaoEmMinutos(int duracaoEmMinutos) {
-        this.duracaoEmMinutos = duracaoEmMinutos;
-    }
 
     public void setTemCenaPosCredito(boolean temCenaPosCredito) {
         this.temCenaPosCredito = temCenaPosCredito;
@@ -26,7 +21,7 @@ public class Filme extends Titulo {
     @Override
     public void exibirFichaTecnica() {
         super.exibirFichaTecnica();
-        System.out.printf("Duração: %d minutos\n", duracaoEmMinutos);
+        System.out.printf("Duração: %d minutos\n", super.getDuracao());
         String temCenaPosCreditos = temCenaPosCredito == true ? "Sim" : "Não";
         System.out.println("Cena pós créditos: " + temCenaPosCreditos);
         System.out.println("Studio: " + studio);
