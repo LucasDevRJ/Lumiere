@@ -1,12 +1,14 @@
+import com.lucasdevrj.lumiere.calculadora.CalculadoraDeTempo;
 import com.lucasdevrj.lumiere.modelos.Filme;
 import com.lucasdevrj.lumiere.modelos.Serie;
+import com.lucasdevrj.lumiere.stream.InteracaoComTitulo;
 
 public class Principal {
     public static void main(String[] args) {
         Filme filme1 = new Filme();
         filme1.setNome("Sonic – O Filme");
         filme1.setAnoDeLancamento(2020);
-        filme1.setDuracaoEmMinutos(99);
+        filme1.setDuracao(99);
         filme1.setGenero("Ação, Aventura e Comédia");
         filme1.setDiretor("Jeff Fowler");
         filme1.setElenco("Ben Schwartz, Jim Carrey, James Marsden e Tika Sumpter");
@@ -27,11 +29,28 @@ public class Principal {
         filme1.zerarAvaliacoes();
         filme1.avaliarTitulo(1);
         filme1.exibirFichaTecnica();
-        filme1.assistir();
-        filme1.pausar();
-        filme1.encerrar();
+
+        InteracaoComTitulo interacao = new InteracaoComTitulo();
+        interacao.assistir(filme1);
+        interacao.pausar(filme1);
+        interacao.encerrar(filme1);
 
         filme1.exibirTitulo();
+
+        CalculadoraDeTempo calculadora = new CalculadoraDeTempo();
+        calculadora.adicionaTitulo(filme1);
+        calculadora.exibirQuantidadeDeTempoAssistido();
+
+        Filme filme2 = new Filme();
+        filme2.setNome("Batman Begins");
+        filme2.setDuracao(140);
+        filme2.setGenero("Noir, Ação e Aventura");
+        filme2.setAnoDeLancamento(2005);
+        filme2.setSinopse("Em meio a uma ameaça tóxica e uma liga de assassinos, Bruce Wayne se vê forçado a enfrentar muito mais do que seus próprios demônios.");
+        filme2.setIncluidoNoPlano(true);
+        filme2.setDiretor("Christopher Nolan");
+        filme2.setElenco("Christian Bale, Michael Caine, Liam Neeson");
+        filme2.setClassificacaoIndicativa(14);
 
         Serie serie1 = new Serie();
         serie1.setNome("The Mandalorian");
