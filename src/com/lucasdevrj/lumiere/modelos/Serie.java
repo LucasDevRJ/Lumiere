@@ -37,9 +37,9 @@ public class Serie extends Titulo {
     }
 
     public String getDuracaoTotalDaSerie() {
-        int duracaoTotalEmMinutos = quantidadeDeEpisodios * quantidadeDeMinutosPorEpisodio;
-        int duracaoHoras = duracaoTotalEmMinutos / 60;
-        int duracaoMinutos = duracaoTotalEmMinutos % 60;
+        super.setDuracao(quantidadeDeEpisodios * quantidadeDeMinutosPorEpisodio);
+        int duracaoHoras = super.getDuracao() / 60;
+        int duracaoMinutos = super.getDuracao() % 60;
         return "%d horas e %d minutos".formatted(duracaoHoras, duracaoMinutos);
     }
 
