@@ -3,6 +3,7 @@ package com.lucasdevrj.lumiere.modelos;
 public class Titulo {
 
     private String nome;
+    private int duracao;
     private String genero;
     private int anoDeLancamento;
     private String sinopse;
@@ -15,8 +16,20 @@ public class Titulo {
     private int totalDeAvaliacoes;
     private boolean estaAssistindo;
 
+    public String getNome() {
+        return nome;
+    }
+
     public void setNome(String nome) {
         this.nome = nome;
+    }
+
+    public void setDuracao(int duracao) {
+        this.duracao = duracao;
+    }
+
+    public int getDuracao() {
+        return duracao;
     }
 
     public void setAnoDeLancamento(int anoDeLancamento) {
@@ -55,6 +68,14 @@ public class Titulo {
             return avaliacao = somaDasAvaliacoes / totalDeAvaliacoes;
         }
         return 0;
+    }
+
+    public boolean getEstaAssistindo() {
+        return estaAssistindo;
+    }
+
+    public void setEstaAssistindo(boolean estaAssistindo) {
+        this.estaAssistindo = estaAssistindo;
     }
 
     public void exibirTitulo() {
