@@ -4,7 +4,7 @@ import com.lucasdevrj.lumiere.modelos.Titulo;
 
 public class CalculadoraDeTempo {
 
-    private int tempoTotalAssistidoEmMinutos;
+    private int tempoTotalAssistidoEmMinutos = 0;
 
     public int getTempoTotalAssistidoEmMinutos() {
         return tempoTotalAssistidoEmMinutos;
@@ -18,6 +18,8 @@ public class CalculadoraDeTempo {
     public void exibirQuantidadeDeTempoAssistido() {
         int horas = getTempoTotalAssistidoEmMinutos() / 60;
         int minutos = getTempoTotalAssistidoEmMinutos() % 60;
-        System.out.printf("Você assistiu no total %d horas e %d minutos.\n", horas, minutos);
+        System.out.println("--------------------|TEMPO ASSSISTIDO|--------------------");
+        System.out.printf("Você assistiu no total %d horas e %d minutos de títulos.\n", horas, minutos);
+        System.out.println("----------------------------------------------------------");
     }
 }

@@ -40,7 +40,8 @@ public class Serie extends Titulo {
         super.setDuracao(quantidadeDeEpisodios * quantidadeDeMinutosPorEpisodio);
         int duracaoHoras = super.getDuracao() / 60;
         int duracaoMinutos = super.getDuracao() % 60;
-        return "%d horas e %d minutos".formatted(duracaoHoras, duracaoMinutos);
+        String mensagemDuracao = duracaoMinutos > 0 ? "%d horas e %d minutos".formatted(duracaoHoras, duracaoMinutos) : "%d horas".formatted(duracaoHoras);
+        return mensagemDuracao;
     }
 
     @Override

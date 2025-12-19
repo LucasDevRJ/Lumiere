@@ -64,6 +64,10 @@ public class Principal {
         filme2.setDiretor("Christopher Nolan");
         filme2.setElenco("Christian Bale, Michael Caine, Liam Neeson");
         filme2.setClassificacaoIndicativa(14);
+        filme2.setTemCenaPosCredito(false);
+
+        calculadora.adicionaTitulo(filme2);
+        calculadora.exibirQuantidadeDeTempoAssistido();
 
         Serie serie1 = new Serie();
         serie1.setNome("The Mandalorian");
