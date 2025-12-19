@@ -2,6 +2,7 @@ import com.lucasdevrj.lumiere.calculadora.CalculadoraDeTempo;
 import com.lucasdevrj.lumiere.modelos.Filme;
 import com.lucasdevrj.lumiere.modelos.Serie;
 import com.lucasdevrj.lumiere.stream.InteracaoComTitulo;
+import com.lucasdevrj.lumiere.stream.VelocidadeDaReproducao;
 
 public class Principal {
     public static void main(String[] args) {
@@ -32,6 +33,18 @@ public class Principal {
 
         InteracaoComTitulo interacao = new InteracaoComTitulo();
         interacao.assistir(filme1);
+
+        VelocidadeDaReproducao velocidadeDaReproducao = new VelocidadeDaReproducao();
+        velocidadeDaReproducao.aumentarVelocidadeDaReproducao(filme1);
+        velocidadeDaReproducao.aumentarVelocidadeDaReproducao(filme1);
+        velocidadeDaReproducao.aumentarVelocidadeDaReproducao(filme1);
+        velocidadeDaReproducao.aumentarVelocidadeDaReproducao(filme1);
+        velocidadeDaReproducao.aumentarVelocidadeDaReproducao(filme1);
+
+        velocidadeDaReproducao.diminuirVelocidadeDaReproducao(filme1);
+        velocidadeDaReproducao.diminuirVelocidadeDaReproducao(filme1);
+        velocidadeDaReproducao.diminuirVelocidadeDaReproducao(filme1);
+
         interacao.pausar(filme1);
         interacao.encerrar(filme1);
 
