@@ -1,4 +1,5 @@
 import com.lucasdevrj.lumiere.calculadora.CalculadoraDeTempo;
+import com.lucasdevrj.lumiere.modelos.Episodio;
 import com.lucasdevrj.lumiere.modelos.Filme;
 import com.lucasdevrj.lumiere.modelos.Serie;
 import com.lucasdevrj.lumiere.stream.InteracaoComTitulo;
@@ -90,5 +91,12 @@ public class Principal {
         serie1.avaliarTitulo(7);
         serie1.exibirTitulo();
         serie1.exibirFichaTecnica();
+
+        Episodio episodio = new Episodio();
+        episodio.setNome("Capítulo 1: O Mandaloriano");
+        episodio.setNumero(1);
+        episodio.setDuracao(39);
+        episodio.setSerie(serie1);
+        episodio.exibirInformacoes();
     }
 }
