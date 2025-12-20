@@ -1,6 +1,8 @@
 package com.lucasdevrj.lumiere.modelos;
 
-public class Titulo {
+import com.lucasdevrj.lumiere.calculadora.Classificavel;
+
+public class Titulo implements Classificavel {
 
     private String nome;
     private int duracao;
@@ -114,6 +116,7 @@ public class Titulo {
         String indicacao = classificacaoIndicativa == 0 ? "Livre" : classificacaoIndicativa + " anos";
         System.out.println("Classificação Indicativa: " + indicacao);
         System.out.print(indicadoSomenteParaMaioresDeIdade());
+        System.out.println("Classificação: " + getClassificacao() + " de 5");
     }
 
     public void avaliarTitulo(int avaliacao) {
@@ -132,5 +135,10 @@ public class Titulo {
         somaDasAvaliacoes = 0;
         totalDeAvaliacoes = 0;
         System.out.println("Avaliações foram zeradas.");
+    }
+
+    @Override
+    public int getClassificacao() {
+        return getAvaliacao() / 2;
     }
 }
