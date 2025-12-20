@@ -1,11 +1,14 @@
 package com.lucasdevrj.lumiere.modelos;
 
-public class Episodio {
+import com.lucasdevrj.lumiere.calculos.Classificavel;
+
+public class Episodio implements Classificavel {
 
     private int numero;
     private int duracao;
     private String nome;
     private Serie serie;
+    private int visualizacoes;
 
     public int getNumero() {
         return numero;
@@ -39,10 +42,25 @@ public class Episodio {
         this.serie = serie;
     }
 
+    public void setVisualizacoes(int visualizacoes) {
+        this.visualizacoes = visualizacoes;
+    }
+
     public void exibirInformacoes() {
         System.out.println("Nome: " + getNome());
         System.out.println("Série: " + getSerie());
         System.out.println("Duração: " + getDuracao() + " minutos");
         System.out.println("Número: " + getNumero());
+        if (getClassificacao() == 1) {
+            System.out.println("Está entre as Séries mais assistidas");
+        }
+    }
+
+    @Override
+    public int getClassificacao() {
+        if (visualizacoes >= 10000) {
+            return 1;
+        }
+        return 0;
     }
 }

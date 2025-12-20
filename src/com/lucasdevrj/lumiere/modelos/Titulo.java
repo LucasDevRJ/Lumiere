@@ -1,6 +1,6 @@
 package com.lucasdevrj.lumiere.modelos;
 
-import com.lucasdevrj.lumiere.calculadora.Classificavel;
+import com.lucasdevrj.lumiere.calculos.Classificavel;
 
 public class Titulo implements Classificavel {
 
@@ -17,6 +17,7 @@ public class Titulo implements Classificavel {
     private int somaDasAvaliacoes;
     private int totalDeAvaliacoes;
     private boolean estaAssistindo;
+    private int visualizacoes;
 
     public String getNome() {
         return nome;
@@ -80,6 +81,14 @@ public class Titulo implements Classificavel {
         this.estaAssistindo = estaAssistindo;
     }
 
+    public int getVisualizacoes() {
+        return visualizacoes;
+    }
+
+    public void setVisualizacoes(int visualizacoes) {
+        this.visualizacoes = visualizacoes;
+    }
+
     public void exibirTitulo() {
         System.out.println("--------------------|Resumo sobre o Título|--------------------");
         System.out.println("Nome: " + nome);
@@ -116,7 +125,8 @@ public class Titulo implements Classificavel {
         String indicacao = classificacaoIndicativa == 0 ? "Livre" : classificacaoIndicativa + " anos";
         System.out.println("Classificação Indicativa: " + indicacao);
         System.out.print(indicadoSomenteParaMaioresDeIdade());
-        System.out.println("Classificação: " + getClassificacao() + " de 5");
+        String classificacao = getClassificacao() > 0 ? "Classificação: " + getClassificacao() + " lugar entre os 3 mais assistidos" : "Não esta entre os TOP 3";
+        System.out.println(classificacao);
     }
 
     public void avaliarTitulo(int avaliacao) {
@@ -139,6 +149,13 @@ public class Titulo implements Classificavel {
 
     @Override
     public int getClassificacao() {
-        return getAvaliacao() / 2;
+        if (visualizacoes >= 300000) {
+            return 1;
+        } else if (visualizacoes >= 200000) {
+            return 2;
+        } else if (visualizacoes >= 100000) {
+            return 3;
+        }
+        return 0;
     }
 }

@@ -1,4 +1,4 @@
-package com.lucasdevrj.lumiere.calculadora;
+package com.lucasdevrj.lumiere.calculos;
 
 import com.lucasdevrj.lumiere.modelos.Titulo;
 

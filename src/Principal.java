@@ -1,4 +1,5 @@
-import com.lucasdevrj.lumiere.calculadora.CalculadoraDeTempo;
+import com.lucasdevrj.lumiere.calculos.CalculadoraDeTempo;
+import com.lucasdevrj.lumiere.calculos.FiltroRecomendacao;
 import com.lucasdevrj.lumiere.modelos.Episodio;
 import com.lucasdevrj.lumiere.modelos.Filme;
 import com.lucasdevrj.lumiere.modelos.Serie;
@@ -55,6 +56,11 @@ public class Principal {
         calculadora.adicionaTitulo(filme1);
         calculadora.exibirQuantidadeDeTempoAssistido();
 
+        filme1.avaliarTitulo(10);
+
+        FiltroRecomendacao filtroRecomendacao = new FiltroRecomendacao();
+        filtroRecomendacao.filtra(filme1);
+
         Filme filme2 = new Filme();
         filme2.setNome("Batman Begins");
         filme2.setDuracao(140);
@@ -66,6 +72,8 @@ public class Principal {
         filme2.setElenco("Christian Bale, Michael Caine, Liam Neeson");
         filme2.setClassificacaoIndicativa(14);
         filme2.setTemCenaPosCredito(false);
+        filme2.setVisualizacoes(200000);
+        filme2.exibirFichaTecnica();
 
         calculadora.adicionaTitulo(filme2);
         calculadora.exibirQuantidadeDeTempoAssistido();
@@ -93,11 +101,15 @@ public class Principal {
         serie1.exibirFichaTecnica();
         serie1.getClassificacao();
 
-        Episodio episodio = new Episodio();
-        episodio.setNome("Capítulo 1: O Mandaloriano");
-        episodio.setNumero(1);
-        episodio.setDuracao(39);
-        episodio.setSerie(serie1);
-        episodio.exibirInformacoes();
+        Episodio episodio1 = new Episodio();
+        episodio1.setNome("Capítulo 1: O Mandaloriano");
+        episodio1.setNumero(1);
+        episodio1.setDuracao(39);
+        episodio1.setSerie(serie1);
+        episodio1.setVisualizacoes(12000);
+        episodio1.exibirInformacoes();
+
+        System.out.println();
+        filtroRecomendacao.filtra(episodio1);
     }
 }
