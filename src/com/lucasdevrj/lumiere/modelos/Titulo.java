@@ -39,6 +39,10 @@ public class Titulo implements Classificavel {
         this.anoDeLancamento = anoDeLancamento;
     }
 
+    public String getGenero() {
+        return genero;
+    }
+
     public void setGenero(String genero) {
         this.genero = genero;
     }

@@ -28,4 +28,13 @@ public class Filme extends Titulo {
         System.out.println("Trilha sonora: " + trilhaSonora);
         System.out.println("---------------------------------------------------------------------");
     }
+
+    @Override
+    public String toString() {
+        return """
+                Nome: %s
+                Duração: %d minutos
+                Gênero: %s
+                """.formatted(super.getNome(), super.getDuracao(), super.getGenero());
+    }
 }
