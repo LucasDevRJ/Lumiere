@@ -6,6 +6,8 @@ import com.lucasdevrj.lumiere.modelos.Serie;
 import com.lucasdevrj.lumiere.stream.InteracaoComTitulo;
 import com.lucasdevrj.lumiere.stream.VelocidadeDaReproducao;
 
+import java.util.ArrayList;
+
 public class Principal {
     public static void main(String[] args) {
         Filme filme1 = new Filme();
@@ -127,5 +129,13 @@ public class Principal {
 
         System.out.println();
         filtroRecomendacao.filtra(episodio1);
+
+        ArrayList<Filme> listaDeFilmes = new ArrayList<>();
+        listaDeFilmes.add(filme1);
+        listaDeFilmes.add(filme2);
+        listaDeFilmes.add(filme3);
+
+        System.out.println("Tamanho da lista: " + listaDeFilmes.size());
+        System.out.println("Primeiro filme da lista: " + listaDeFilmes.get(0).getNome());
     }
 }
