@@ -78,6 +78,22 @@ public class Principal {
         calculadora.adicionaTitulo(filme2);
         calculadora.exibirQuantidadeDeTempoAssistido();
 
+        Filme filme3 = new Filme();
+        filme3.setNome("Matrix");
+        filme3.setDuracao(136);
+        filme3.setGenero("Ficção científica");
+        filme3.setAnoDeLancamento(1999);
+        filme3.setSinopse("O que é a Matrix? Em busca de respostas, o hacker Neo entra em um caminho sem volta e descobre a surpreendente verdade sobre o mundo em que vive.");
+        filme3.setIncluidoNoPlano(true);
+        filme3.avaliarTitulo(10);
+        filme3.setDiretor("Lana Wachowski e Lilly Wachowski");
+        filme3.setElenco("Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss...");
+        filme3.setClassificacaoIndicativa(14);
+        filme3.setTemCenaPosCredito(false);
+        filme3.setStudio("Warner Bros");
+        filme3.setTrilhaSonora("Clubbed to Death");
+        filme3.exibirFichaTecnica();
+
         Serie serie1 = new Serie();
         serie1.setNome("The Mandalorian");
         serie1.setGenero("Ficção científica, Aventura e Ação");
