@@ -19,6 +19,16 @@ public class Titulo implements Classificavel {
     private boolean estaAssistindo;
     private int visualizacoes;
 
+    public Titulo() {
+
+    }
+
+    public Titulo(String nome, int duracao, String genero) {
+        setNome(nome);
+        setDuracao(duracao);
+        setGenero(genero);
+    }
+
     public String getNome() {
         return nome;
     }

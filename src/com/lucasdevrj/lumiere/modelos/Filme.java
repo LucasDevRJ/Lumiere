@@ -11,9 +11,7 @@ public class Filme extends Titulo {
     }
 
     public Filme(String nome, int duracao, String genero) {
-        super.setNome(nome);
-        super.setDuracao(duracao);
-        super.setGenero(genero);
+        super(nome, duracao, genero);
     }
 
     public void setTemCenaPosCredito(boolean temCenaPosCredito) {

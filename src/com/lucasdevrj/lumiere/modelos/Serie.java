@@ -9,6 +9,14 @@ public class Serie extends Titulo {
     private String criador;
     private String duracaoTotalDaSerie;
 
+    public Serie() {
+
+    }
+
+    public Serie(String nome, int duracao, String genero) {
+        super(nome, duracao, genero);
+    }
+
     public void setQuantidadeDeTemporadas(int quantidadeDeTemporadas) {
         this.quantidadeDeTemporadas = quantidadeDeTemporadas;
     }
