@@ -6,6 +6,16 @@ public class Filme extends Titulo {
     private String studio;
     private String trilhaSonora;
 
+    public Filme() {
+
+    }
+
+    public Filme(String nome, int duracao, String genero) {
+        super.setNome(nome);
+        super.setDuracao(duracao);
+        super.setGenero(genero);
+    }
+
     public void setTemCenaPosCredito(boolean temCenaPosCredito) {
         this.temCenaPosCredito = temCenaPosCredito;
     }

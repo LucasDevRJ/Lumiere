@@ -96,6 +96,9 @@ public class Principal {
         filme3.setTrilhaSonora("Clubbed to Death");
         filme3.exibirFichaTecnica();
 
+        Filme filme4 = new Filme("Corações de Ferro", 135, "Ação, Aventura e Militarismo");
+        System.out.println(filme4);
+
         Serie serie1 = new Serie();
         serie1.setNome("The Mandalorian");
         serie1.setGenero("Ficção científica, Aventura e Ação");
