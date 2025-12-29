@@ -122,6 +122,8 @@ public class Principal {
         serie1.exibirFichaTecnica();
         serie1.getClassificacao();
 
+        System.out.println(serie1);
+
         Episodio episodio1 = new Episodio();
         episodio1.setNome("Capítulo 1: O Mandaloriano");
         episodio1.setNumero(1);

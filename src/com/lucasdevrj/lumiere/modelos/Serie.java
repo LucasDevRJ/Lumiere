@@ -63,5 +63,14 @@ public class Serie extends Titulo {
         System.out.println("Criador: " + criador);
         System.out.println("---------------------------------------------------------------------");
     }
+
+    @Override
+    public String toString() {
+        return """
+                Nome: %s
+                Gênero: %s
+                Temporadas: %d
+                """.formatted(super.getNome(), super.getGenero(), quantidadeDeTemporadas);
+    }
 }
 
