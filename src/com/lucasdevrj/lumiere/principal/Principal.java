@@ -1,3 +1,5 @@
+package com.lucasdevrj.lumiere.principal;
+
 import com.lucasdevrj.lumiere.calculos.CalculadoraDeTempo;
 import com.lucasdevrj.lumiere.calculos.FiltroRecomendacao;
 import com.lucasdevrj.lumiere.modelos.Episodio;

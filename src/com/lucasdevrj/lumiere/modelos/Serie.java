@@ -70,7 +70,7 @@ public class Serie extends Titulo {
                 Nome: %s
                 Gênero: %s
                 Temporadas: %d
-                """.formatted(super.getNome(), super.getGenero(), quantidadeDeTemporadas);
+                """.formatted(super.getNome(), super.getGenero(), super.getDuracao());
     }
 }
 
