@@ -10,11 +10,19 @@ public class PrincipalComListas {
     public static void main(String[] args) {
 
         Filme filme1 = new Filme("Gladiador II", 148, "Épico, Temática militar e Drama");
+        filme1.setVisualizacoes(310000);
+
         Filme filme2 = new Filme("Scooby-Doo", 86, "Familia e Comédia");
+        filme2.setVisualizacoes(220000);
+
         Filme filme3 = new Filme("Top Gun", 109, "Temática militar e Drama");
+        filme3.setVisualizacoes(400000);
 
         Serie serie1 = new Serie("Stranger Things", 5, "Drama e Ficção");
+        serie1.setVisualizacoes(22000);
+
         Serie serie2 = new Serie("Breaking Bad", 5, "Drama e Suspense");
+        serie2.setVisualizacoes(500000);
 
         ArrayList<Titulo> listaDeTitulos = new ArrayList<>();
         listaDeTitulos.add(filme1);
@@ -23,6 +31,8 @@ public class PrincipalComListas {
         listaDeTitulos.add(serie1);
         listaDeTitulos.add(serie2);
         for (Titulo titulo : listaDeTitulos) {
+            Filme filme = (Filme) titulo;
+            System.out.println("Classificação: " + filme.getClassificacao());
             System.out.println(titulo);
         }
     }
