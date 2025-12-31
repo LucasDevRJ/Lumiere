@@ -5,6 +5,7 @@ import com.lucasdevrj.lumiere.modelos.Serie;
 import com.lucasdevrj.lumiere.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -31,9 +32,23 @@ public class PrincipalComListas {
         listaDeTitulos.add(serie1);
         listaDeTitulos.add(serie2);
         for (Titulo titulo : listaDeTitulos) {
-            Filme filme = (Filme) titulo;
-            System.out.println("Classificação: " + filme.getClassificacao());
+            if (titulo instanceof Filme) {
+                Filme filme = (Filme) titulo;
+                System.out.println("Classificação: " + filme.getClassificacao());
+            }
             System.out.println(titulo);
         }
+
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Humphrey Bogart");
+        listaDeArtistas.add("Katharine Hepburn");
+        listaDeArtistas.add("Scarlett Johansson");
+        listaDeArtistas.add("Samuel L. Jackson");
+
+        System.out.println("Artistas: " + listaDeArtistas);
+
+        Collections.sort(listaDeArtistas);
+
+        System.out.println("Artistas ordenados com Collections: " + listaDeArtistas);
     }
 }
