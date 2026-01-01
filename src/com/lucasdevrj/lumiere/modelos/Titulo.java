@@ -2,7 +2,7 @@ package com.lucasdevrj.lumiere.modelos;
 
 import com.lucasdevrj.lumiere.calculos.Classificavel;
 
-public class Titulo implements Classificavel {
+public class Titulo implements Classificavel, Comparable<Titulo> {
 
     private String nome;
     private int duracao;
@@ -171,5 +171,10 @@ public class Titulo implements Classificavel {
             return 3;
         }
         return 0;
+    }
+
+    @Override
+    public int compareTo(Titulo outroTitulo) {
+        return nome.compareTo(outroTitulo.nome);
     }
 }

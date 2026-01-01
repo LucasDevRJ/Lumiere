@@ -50,5 +50,18 @@ public class PrincipalComListas {
         Collections.sort(listaDeArtistas);
 
         System.out.println("Artistas ordenados com Collections: " + listaDeArtistas);
+
+        System.out.print("Lista de Títulos não ordenados: ");
+        for (Titulo titulo : listaDeTitulos) {
+            System.out.print(titulo.getNome() + ", ");
+        }
+
+        System.out.println();
+
+        System.out.print("Lista de Títulos ordenados: ");
+        Collections.sort(listaDeTitulos);
+        for (Titulo titulo : listaDeTitulos) {
+            System.out.print(titulo.getNome() + ", ");
+        }
     }
 }
