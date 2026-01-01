@@ -49,6 +49,10 @@ public class Titulo implements Classificavel, Comparable<Titulo> {
         this.anoDeLancamento = anoDeLancamento;
     }
 
+    public int getAnoDeLancamento() {
+        return anoDeLancamento;
+    }
+
     public String getGenero() {
         return genero;
     }
