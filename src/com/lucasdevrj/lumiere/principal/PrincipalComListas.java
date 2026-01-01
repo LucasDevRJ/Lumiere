@@ -4,9 +4,7 @@ import com.lucasdevrj.lumiere.modelos.Filme;
 import com.lucasdevrj.lumiere.modelos.Serie;
 import com.lucasdevrj.lumiere.modelos.Titulo;
 
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
+import java.util.*;
 
 public class PrincipalComListas {
     public static void main(String[] args) {
@@ -75,6 +73,19 @@ public class PrincipalComListas {
         listaDeTitulos.sort(Comparator.comparing(Titulo::getAnoDeLancamento));
         for (Titulo titulo : listaDeTitulos) {
             System.out.print(titulo.getNome() + " (" + titulo.getAnoDeLancamento() + ")" + ", ");
+        }
+
+        System.out.println();
+        List<Titulo> listaDeTitulos2 = new LinkedList<>();
+        listaDeTitulos2.add(filme1);
+        listaDeTitulos2.add(filme2);
+        listaDeTitulos2.add(filme3);
+        listaDeTitulos2.add(serie1);
+        listaDeTitulos2.add(serie2);
+
+        System.out.print("Lista usando a Inteface List: ");
+        for (Titulo titulo : listaDeTitulos2) {
+            System.out.print(titulo.getNome() + ", ");
         }
     }
 }
