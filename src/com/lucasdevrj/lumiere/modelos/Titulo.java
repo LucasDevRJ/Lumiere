@@ -5,21 +5,14 @@ import com.lucasdevrj.lumiere.calculos.Classificavel;
 
 public class Titulo implements Classificavel, Comparable<Titulo> {
 
-    @SerializedName("Title")
     private String nome;
     private int duracao;
-
-    @SerializedName("Genre")
     private String genero;
-
-    @SerializedName("Year")
     private int anoDeLancamento;
     private String sinopse;
     private boolean incluidoNoPlano;
     private int avaliacao;
     private String diretor;
-
-    @SerializedName("Actors")
     private String elenco;
     private int classificacaoIndicativa;
     private int somaDasAvaliacoes;
@@ -35,6 +28,12 @@ public class Titulo implements Classificavel, Comparable<Titulo> {
         setNome(nome);
         setDuracao(duracao);
         setGenero(genero);
+    }
+
+    public Titulo(TituloOmdb tituloOmdb) {
+        nome = tituloOmdb.title();
+        anoDeLancamento = Integer.valueOf(tituloOmdb.year());
+        duracao = Integer.valueOf(tituloOmdb.runtime().substring(0, 3).replaceAll(" ", ""));
     }
 
     public String getNome() {
@@ -192,5 +191,10 @@ public class Titulo implements Classificavel, Comparable<Titulo> {
     @Override
     public int compareTo(Titulo outroTitulo) {
         return nome.compareTo(outroTitulo.nome);
+    }
+
+    @Override
+    public String toString() {
+        return "Título: " + nome + "\nAno de lançamento: " + anoDeLancamento + "\nDuração: " + duracao + " minutos";
     }
 }

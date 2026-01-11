@@ -1,7 +1,10 @@
 package com.lucasdevrj.lumiere.principal;
 
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.lucasdevrj.lumiere.modelos.Titulo;
+import com.lucasdevrj.lumiere.modelos.TituloOmdb;
 
 import java.io.IOException;
 import java.net.URI;
@@ -27,12 +30,24 @@ public class PrincipalComBusca {
         String json = resposta.body();
         System.out.println(json);
 
-        Gson gson = new Gson();
-        Titulo titulo = gson.fromJson(json, Titulo.class);
-        System.out.println("--------------------|Título|--------------------");
-        System.out.println("Título: " + titulo.getNome());
-        System.out.println("Ano: " + titulo.getAnoDeLancamento());
-        System.out.println("Gênero: " + titulo.getGenero());
-        System.out.println("Atores: " + titulo.getElenco());
+        Gson gson = new GsonBuilder().setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE).create();
+        TituloOmdb tituloOmdb = gson.fromJson(json, TituloOmdb.class);
+        System.out.println("--------------------|Record do Título|--------------------");
+        System.out.println("Título: " + tituloOmdb.title());
+        System.out.println("Duração: " + tituloOmdb.runtime());
+        System.out.println("Ano: " + tituloOmdb.year());
+        System.out.println("Gênero: " + tituloOmdb.genre());
+        System.out.println("Diretor: " + tituloOmdb.director());
+        System.out.println("Atores: " + tituloOmdb.actors());
+        System.out.println("Prêmios: " + tituloOmdb.awards());
+        System.out.println("Poster: " + tituloOmdb.poster());
+        System.out.println("País: " + tituloOmdb.country());
+        System.out.println("----------------------------------------------------------");
+
+        Titulo titulo = new Titulo(tituloOmdb);
+        System.out.println("--------------------|Classe Título|--------------------");
+        System.out.println(titulo);
+        System.out.println("-------------------------------------------------------");
+
     }
 }
