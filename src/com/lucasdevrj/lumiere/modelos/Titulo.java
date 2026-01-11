@@ -1,17 +1,25 @@
 package com.lucasdevrj.lumiere.modelos;
 
+import com.google.gson.annotations.SerializedName;
 import com.lucasdevrj.lumiere.calculos.Classificavel;
 
 public class Titulo implements Classificavel, Comparable<Titulo> {
 
+    @SerializedName("Title")
     private String nome;
     private int duracao;
+
+    @SerializedName("Genre")
     private String genero;
+
+    @SerializedName("Year")
     private int anoDeLancamento;
     private String sinopse;
     private boolean incluidoNoPlano;
     private int avaliacao;
     private String diretor;
+
+    @SerializedName("Actors")
     private String elenco;
     private int classificacaoIndicativa;
     private int somaDasAvaliacoes;
@@ -105,6 +113,10 @@ public class Titulo implements Classificavel, Comparable<Titulo> {
 
     public void setVisualizacoes(int visualizacoes) {
         this.visualizacoes = visualizacoes;
+    }
+
+    public String getElenco() {
+        return elenco;
     }
 
     public void exibirTitulo() {
