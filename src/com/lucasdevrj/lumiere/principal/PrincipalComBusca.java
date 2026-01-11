@@ -1,5 +1,8 @@
 package com.lucasdevrj.lumiere.principal;
 
+import com.google.gson.Gson;
+import com.lucasdevrj.lumiere.modelos.Titulo;
+
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -21,6 +24,11 @@ public class PrincipalComBusca {
                         .uri(URI.create(url))
                         .build();
         HttpResponse<String> resposta = cliente.send(requisicao, HttpResponse.BodyHandlers.ofString());
-        System.out.println(resposta.body());
+        String json = resposta.body();
+        System.out.println(json);
+
+        Gson gson = new Gson();
+        Titulo titulo = gson.fromJson(json, Titulo.class);
+        System.out.println("Título: " + titulo.getNome());
     }
 }
