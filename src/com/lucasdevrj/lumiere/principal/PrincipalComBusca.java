@@ -3,6 +3,7 @@ package com.lucasdevrj.lumiere.principal;
 import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.lucasdevrj.lumiere.excecoes.ErroDeCaractereInvalidoException;
 import com.lucasdevrj.lumiere.modelos.Titulo;
 import com.lucasdevrj.lumiere.modelos.TituloOmdb;
 
@@ -50,12 +51,12 @@ public class PrincipalComBusca {
                 System.out.println("--------------------|Classe Título|--------------------");
                 System.out.println(titulo);
                 System.out.println("-------------------------------------------------------");
-            } catch (NumberFormatException erro) {
+            } catch (ErroDeCaractereInvalidoException erro) {
                 System.out.println("Erro de formatação de valor!");
                 System.out.println("Aconteceu um erro: " + erro.getMessage());
             }
 
-        } catch (IllegalArgumentException erro) {
+        } catch (NullPointerException | IllegalArgumentException erro) {
             System.out.println("Valor inválido digitado!");
             System.out.println("Erro: " + erro.getMessage());
         } finally {

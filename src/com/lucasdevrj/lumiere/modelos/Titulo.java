@@ -1,6 +1,8 @@
 package com.lucasdevrj.lumiere.modelos;
 
 import com.lucasdevrj.lumiere.calculos.Classificavel;
+import com.lucasdevrj.lumiere.excecoes.ErroDeCaractereInvalidoException;
+import com.lucasdevrj.lumiere.excecoes.ErroDeValorVazioException;
 
 public class Titulo implements Classificavel, Comparable<Titulo> {
 
@@ -30,6 +32,7 @@ public class Titulo implements Classificavel, Comparable<Titulo> {
     }
 
     public Titulo(TituloOmdb tituloOmdb) {
+        validaValorDaConversao(tituloOmdb);
         nome = tituloOmdb.title();
         anoDeLancamento = Integer.valueOf(tituloOmdb.year());
         duracao = Integer.valueOf(tituloOmdb.runtime().substring(0, 3).replaceAll(" ", ""));
@@ -173,6 +176,25 @@ public class Titulo implements Classificavel, Comparable<Titulo> {
         somaDasAvaliacoes = 0;
         totalDeAvaliacoes = 0;
         System.out.println("Avaliações foram zeradas.");
+    }
+
+    public boolean validaValorDaConversao(TituloOmdb tituloOmdb) {
+        if (tituloOmdb.title().isEmpty() || tituloOmdb.year().isEmpty() || tituloOmdb.runtime().isEmpty()) {
+            throw new ErroDeValorVazioException("Não foi possível converter o Título porque ele tem valor(es) vázio(s)" +
+                    ". Adicione valor(es) nele(s).");
+        }
+
+        if (tituloOmdb.year().matches(".*\\D.*")) {
+            throw new ErroDeCaractereInvalidoException("Não foi possível converter o ano porque ele tem caracteres inválidos." +
+                    " É preciso somente números.");
+        }
+
+        if (!tituloOmdb.runtime().matches(".*\\d.*\\d.*")) {
+            throw new ErroDeCaractereInvalidoException("Não foi possível converter a duração porque ele tem caracteres inválidos." +
+                    " É preciso pelo menos dois números.");
+        }
+
+        return true;
     }
 
     @Override
