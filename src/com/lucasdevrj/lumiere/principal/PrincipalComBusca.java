@@ -44,10 +44,14 @@ public class PrincipalComBusca {
         System.out.println("País: " + tituloOmdb.country());
         System.out.println("----------------------------------------------------------");
 
-        Titulo titulo = new Titulo(tituloOmdb);
-        System.out.println("--------------------|Classe Título|--------------------");
-        System.out.println(titulo);
-        System.out.println("-------------------------------------------------------");
-
+        try {
+            Titulo titulo = new Titulo(tituloOmdb);
+            System.out.println("--------------------|Classe Título|--------------------");
+            System.out.println(titulo);
+            System.out.println("-------------------------------------------------------");
+        } catch (NumberFormatException e) {
+            System.out.print("Aconteceu um erro: ");
+            System.out.print(e.getMessage());
+        }
     }
 }

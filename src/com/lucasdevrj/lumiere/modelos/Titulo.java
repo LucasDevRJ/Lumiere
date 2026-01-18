@@ -1,6 +1,5 @@
 package com.lucasdevrj.lumiere.modelos;
 
-import com.google.gson.annotations.SerializedName;
 import com.lucasdevrj.lumiere.calculos.Classificavel;
 
 public class Titulo implements Classificavel, Comparable<Titulo> {
