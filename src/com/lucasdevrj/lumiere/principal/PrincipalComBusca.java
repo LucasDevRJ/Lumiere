@@ -7,7 +7,6 @@ import com.lucasdevrj.lumiere.excecoes.ErroDeCaractereInvalidoException;
 import com.lucasdevrj.lumiere.modelos.Titulo;
 import com.lucasdevrj.lumiere.modelos.TituloOmdb;
 
-import java.io.FileWriter;
 import java.io.IOException;
 import java.net.URI;
 import java.net.http.HttpClient;
@@ -56,10 +55,6 @@ public class PrincipalComBusca {
                 System.out.println("--------------------|Classe Título|--------------------");
                 System.out.println(titulo);
                 System.out.println("-------------------------------------------------------");
-
-                FileWriter arquivo = new FileWriter("filmes.txt");
-                arquivo.write(titulo.toString());
-                arquivo.close();
             } catch (ErroDeCaractereInvalidoException erro) {
                 System.out.println("Erro de formatação de valor!");
                 System.out.println("Aconteceu um erro: " + erro.getMessage());
